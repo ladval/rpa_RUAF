@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Terminos y Condiciones - Consulta RUAF 
+</title><script src="/bundles/modernizr?v=w9fZKPSiHtN4N4FRqV7jn-3kGoQY5hHpkwFv5TfMrus1"></script>
+<link href="/Content/css?v=Xw6ygCRtjmwsaYzQgSgIlPh0tGAbQn6ZK3XjSZpl7mY1" rel="stylesheet"/>
+
+
+    
+     <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-ico" href="Images/Ruaf_logo.png" />
+    <!-- /Favicon -->
+
+
+    <link href="Style/Cinta.css" rel="stylesheet" /><link href="Style/Custom_Responsive.css" rel="stylesheet" /><link href="Style/estilos.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.12.4.min.js"></script>
+    
+    <script src="/Scripts/Popup/jquery-1.12.4.js"></script>
+    <link href="/Scripts/Popup/jquery-ui.css" rel="stylesheet" />
+    <script src="/Scripts/Popup/jquery-ui.js"></script>
+
+
+     <script>
+         // var hfHiddenURI = document.getElementById('HiddenURI');
+
+         history.pushState(null, document.title, location.href);
+         window.addEventListener('popstate', function (event) {
+             history.pushState(null, document.title, location.href);
+         });
+
+
+        
+      function SessionExpireAlert(timeout) {
+          var seconds = timeout / 1000;
+         // document.getElementsByName("secondsIdle").innerHTML = seconds;
+          document.getElementsByName("seconds").innerHTML = seconds;
+          setInterval(function () {
+              seconds--;
+              document.getElementById("seconds").innerHTML = seconds;
+          //    document.getElementById("secondsIdle").innerHTML = seconds;
+          }, 1000);
+          setTimeout(function () {
+            
+              $("#dialog-confirm").dialog({
+                  resizable: false,
+                  height: "auto",
+                  width: 400,
+                  modal: true
+              });
+
+
+          }, timeout - 20 * 1000);
+          setTimeout(function () {
+              window.location = "https://ruaf.sispro.gov.co/default.aspx";
+          }, timeout);
+      };
+      function ResetSession() {
+          window.location = window.location.href;
+      }
+
+     
+      function startTimer(duration, display) {
+          var timer = duration, minutes, seconds;
+          setInterval(function () {
+              minutes = parseInt(timer / 60, 10)
+              seconds = parseInt(timer % 60, 10);
+
+              minutes = minutes < 10 ? "0" + minutes : minutes;
+              seconds = seconds < 10 ? "0" + seconds : seconds;
+
+              display.textContent = minutes + ":" + seconds;
+
+              if (--timer < 0) {
+                  timer = duration;
+              }
+          }, 1000);
+      }
+
+      window.onload = function () {
+          var fiveMinutes = 60 * 5,
+              display = document.querySelector('#time');
+          startTimer(fiveMinutes, display);
+      };
+
+  </script>
+
+</head>
+<body>
+    <form method="post" action="./TerminosCondiciones.aspx" id="ctl01">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl01'];
+if (!theForm) {
+    theForm = document.ctl01;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(function () {setInterval(KeepSessionAlive, 230000);});function KeepSessionAlive() {$.post('/KeepSessionAlive.ashx', null);};//]]>
+</script>
+
+<script src="/bundles/MsAjaxJs?v=D6VN0fHlwFSIWjbVzi6mZyE9Ls-4LNrSSYVGRU46XF81" type="text/javascript"></script>
+<script src="Scripts/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="Scripts/respond.min.js" type="text/javascript"></script>
+<script src="/bundles/WebFormsJs?v=N8tymL9KraMLGAMFuPycfH3pXe6uUlRXdhtYv8A_jUU1" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CBD8DE1A" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="SINKEyzgxsRd3jgne+kaoGtlyjHTVFcAij5u7+q5KAW/OpMBLU8zA+esSS8OHcb/y3zFJA6p/3duXYgT6JvdIOGQhGqHnVrFbU5FlbJQgRTFTjY1MGffLIjABinRhhEMNVFU2ww3ciNj7DUq/NsdApdoyKQgvzYBBigRKvPrbRPygKAyfg4QFmZvu1j0q7oHxfSWATO8No3yFoAcfFs2uURdKgE=" />
+</div>
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl11', 'ctl01', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+
+        <div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="logoMinsalud">
+            <a href="https://www.minsalud.gov.co" title="Ministerio de Salud y Protección Social - República de Colombia" accesskey="m"​>
+            <img alt="Ministerio de Salud y Protección Social - República de Colombia" src="https://www.minsalud.gov.co/LogosInstitucionales/logo-gobierno-Ministerio-de-Salud-y-Proteccion-Social-minsalud.png" />
+            </a>
+             <img src="Images/RUAF.png" alt="Ministerio de Salud" alt="Ministerio de Salud">
+        </div>
+          <div style="font-size: 10px">Su sesión expira en: <span id="time">05:00</span> Minutos de inactividad.</div>
+      </div>
+
+
+      
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+</div>
+      
+
+        <div class="contentMenuSup">
+<div id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c" __markuptype="vsattributemarkup" __webpartid="{2885fbae-e132-45e1-b3d3-4b674d64850c}" webpart="true">
+	
+
+
+    <script type="text/javascript" src="js/jquery.ui.potato.menu.js"></script>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $('#menuSuperior').ptMenu();
+        });
+    })(jQuery);
+
+
+
+ 
+</script>
+
+    <ul id="menuSuperior" class="potato-menu potato-menu-group potato-menu-holizontal">
+
+        <li class="potato-menu-item">
+            <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl01_linkNivel1" href="Default.aspx">Inicio</a>
+
+        </li>
+
+        <li class="potato-menu-item potato-menu-has-vertical">
+            <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl02_linkNivel1" accesskey="M" href="#">Reporte Detallado</a>
+
+            <ul class="potato-menu-group potato-menu-vertical">
+                <li class="potato-menu-item">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl02_rptNivel2_ctl01_linkNivel2" accesskey="I" href="TerminosCondiciones.aspx">Afiliaciones de la Persona en el Sistema</a>
+                </li>
+            </ul>
+
+        </li>
+
+        <li class="potato-menu-item potato-menu-has-vertical">
+            <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl03_linkNivel1" accesskey="S" href="#">Reportes Agrupados</a>
+
+            <ul class="potato-menu-group potato-menu-vertical">
+
+                
+
+                <li class="potato-menu-item">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl03_rptNivel2_ctl02_linkNivel2" accesskey="P" href="AfiliadosPN.aspx">Número de Afiliaciones al Sistema de Seguridad Social en Pensiones</a>
+                </li>
+
+                <li class="potato-menu-item">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl03_rptNivel2_ctl03_linkNivel2" accesskey="P" href="AfiliadosRP.aspx">Número de Afiliaciones al Sistema de Riesgos Laborales</a>
+                </li>
+
+                <li class="potato-menu-item">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl03_rptNivel2_ctl04_linkNivel2" accesskey="C" href="AfiliadosCF.aspx">Número de Afiliaciones a Cajas de Compensación Familiar</a>
+                </li>
+
+                <li class="potato-menu-item">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl03_rptNivel2_ctl05_linkNivel2" accesskey="M" href="AfiliadosCE.aspx">Número de Afiliaciones a Cesantías</a>
+                </li>
+
+                <li class="potato-menu-item">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850d_rptNivel1_ctl03_rptNivel2_ctl05_linkNivel2" accesskey="M" href="AfiliadosPensionados.aspx">Número de Personas Pensionadas</a>
+                </li>
+            </ul>
+
+        </li>
+        
+        <li class="potato-menu-item potato-menu-has-vertical">
+            <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl0311_linkNivel1" accesskey="U" href="#">Ayuda</a>
+            <ul class="potato-menu-group potato-menu-vertical">
+                <li class="potato-menu-item">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl02_rptNivel2_ctl06_linkNivel2" accesskey="I" href="AyudaUsuario.aspx">Manual de consultas RUAF</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="potato-menu-item-right">
+            <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl04_linkNivel1" accesskey="S" href="#" title="Es de uso exclusivo del Ministerio y entidades de control">Seguridad</a>
+
+            <ul class="potato-menu-group potato-menu-vertical">
+
+                <li class="potato-menu-item-right">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl04_linkNivel2" href="Login.aspx">Login</a>
+                </li>
+
+                <li class="potato-menu-item-right">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl04_linkNivel3" href="Registro.aspx">Registro</a>
+                </li>
+
+                <li class="potato-menu-item-right">
+                    <a id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_rptNivel1_ctl04_linkNivel4" href="RecuperarPassword.aspx">Recuperar Contraseña</a>
+                </li>
+
+            </ul>
+        </li>
+
+
+
+
+
+
+
+
+    </ul>
+    
+
+<span id="ctl00_g_2885fbae_e132_45e1_b3d3_4b674d64850c_lblError"></span>
+
+</div>
+		<div class="clear"></div>
+	</div>
+        <div>
+
+</div>
+
+        <div class="container body-content">
+            
+    <script type="text/javascript">
+        function Resolver(valor) {
+            //debugger;
+            if (valor == 0)
+            {
+                document.getElementById('MainContent_btnEnviar').disabled = true;
+                document.getElementById('MainContent_btnEnviar').style.backgroundColor = "#808080";
+            }
+            else
+            {
+                document.getElementById('MainContent_btnEnviar').disabled = false;
+                document.getElementById('MainContent_btnEnviar').style.backgroundColor = "#0094c7";
+                
+            }
+        }
+    </script>
+    <h4>Bienvenido a la consulta de Afiliaciones
+Términos de Uso:</h4>
+
+    <textarea name="ctl00$MainContent$txbTerminoCondiciones" rows="2" cols="20" readonly="readonly" id="MainContent_txbTerminoCondiciones" disabled="disabled" class="aspNetDisabled" style="height:350px;width:100%;text-align:justify;cursor: not-allowed;">
+El acceso a la consulta de Afiliaciones es un servicio que presta el Ministerio de Salud y Protecci&#243;n Social conforme a lo establecido en el Decreto 780 de 2016, Libro 3, Parte 1 – RUAF, Art&#237;culo 3.1.10 Consultas, para que los ciudadanos puedan verificar su informaci&#243;n de afiliaciones al sistema de seguridad social, o un tercero en el marco legal establecido. 
+El uso de la informaci&#243;n suministrada por el Ministerio de Salud y Protecci&#243;n Social est&#225; limitado a fines personales, cualquier uso para una finalidad diferente, como la obtenci&#243;n de un beneficio econ&#243;mico o la consulta de informaci&#243;n personal de un tercero, ser&#225; considerado irregular y estar&#225; sujeto al inicio de las acciones legales pertinentes. Se proh&#237;be expresamente a cualquier persona natural o jur&#237;dica, diferente del titular de los datos, la utilizaci&#243;n de la informaci&#243;n personal contenida en este sitio web. 
+Esta consulta en l&#237;nea cuenta con mecanismos de seguridad para controlar el acceso y la utilizaci&#243;n de la informaci&#243;n contenida, por lo tanto, el Ministerio de Salud y Protecci&#243;n Social podr&#225; bloquear el acceso a esta p&#225;gina web por cualquier utilizaci&#243;n que considere irregular y entablar las acciones legales correspondientes. 
+Usted ahora puede acceder a su informaci&#243;n de afiliaciones a la seguridad social si cumple las siguientes condiciones: 
+
+1. Es claro para m&#237;, que el Ministerio de Salud y Protecci&#243;n Social  es la entidad depositaria de la informaci&#243;n reportada por las Administradoras que hacen parte del Sistema de  Seguridad Social.
+2. Acepto que en cualquier momento y sin previo aviso, el Ministerio de Salud y Protecci&#243;n Social puede modificar o actualizar la consulta en l&#237;nea de afiliaciones de la manera que estime conveniente y que no tiene ninguna obligaci&#243;n de continuar el servicio en sus actuales condiciones. 
+3. Entiendo que en consecuencia, el Ministerio de Salud y Protecci&#243;n Social es responsable por asegurar la concordancia entre los datos que le han sido suministrados y los que registra/divulga, pero no tiene ninguna responsabilidad por la veracidad de los mismos. 
+4. Es claro para m&#237; que por medio de esta consulta en l&#237;nea de Afiliaciones a la Seguridad Social, el Ministerio de Salud y Protecci&#243;n Social pone a mi alcance los mecanismos necesarios para que pueda ejercer el derecho de habeas data, de acuerdo con lo establecido en el art&#237;culo 15 de la Constituci&#243;n Pol&#237;tica de Colombia y con la doctrina de la Corte Constitucional de Colombia. 
+5. Manifiesto que &#250;nicamente solicitar&#233; informaci&#243;n relativa a mi persona y que no obtendr&#233; beneficios econ&#243;micos con este servicio. 
+6. Manifiesto que me hago responsable por el uso y cuidado de la informaci&#243;n que llegare a obtener a trav&#233;s de la presente consulta en l&#237;nea de afiliaciones a la seguridad social.
+</textarea>
+
+    <center>
+    <table id="MainContent_RadioButtonList1" cellspacing="1" cellpadding="1">
+	<tr>
+		<td><input id="MainContent_RadioButtonList1_0" type="radio" name="ctl00$MainContent$RadioButtonList1" value="1" onclick="Resolver(1);" /><label for="MainContent_RadioButtonList1_0">Acepto     </label></td><td><input id="MainContent_RadioButtonList1_1" type="radio" name="ctl00$MainContent$RadioButtonList1" value="0" onclick="Resolver(0);" /><label for="MainContent_RadioButtonList1_1"> No Acepto</label></td>
+	</tr>
+</table>
+         <br />
+
+  
+    <input type="submit" name="ctl00$MainContent$btnEnviar" value="Enviar" id="MainContent_btnEnviar" class="form-control" disabled="true" style="color:White;background-color:Gray;width:150px;" />
+    
+
+        </center>
+
+    <br />
+    <br /> <br />
+    <br /> <br />
+    <br />
+
+    <br />
+
+
+        </div>
+          <footer>
+             <div id="footer">
+                    <div class="containerFooter">
+
+                        <div id="footerLeft">
+                            <strong>Conmutador:</strong> (57-1) 330 5000 - Central de fax: (57-1) 330 5050<br>
+                            <strong>Punto de atención presencial:</strong> Carrera 13 No. 32-76 piso 1, Bogotá, código postal 110311<br>
+                            Lunes a viernes de 8:00 a.m. a 4:00 p.m. en jornada continua<br>
+                            <strong>Línea de atención de desastres:</strong> (57-1) 330 5071 - 24 horas<br>
+                            <strong><a style="text-decoration: underline; color: white;">Notificaciones judiciales:</a> </strong> <a href="mailto:notificacionesjudiciales@minsalud.gov.co" title="Correo judicial" style="text-decoration: underline; color: white;">notificacionesjudiciales@minsalud.gov.co</a><br>
+                            <a href="/Documents/Ministerio/Terminos%20y%20Condiciones%20de%20uso%20del%20portal%20web_Octubre%202012x.pdf" target="_blank" title="Terminos y condiciones" style="text-decoration: underline; color: white;">Términos y Condiciones de uso.</a> <br>
+                            <a style="text-decoration: underline; color: white;">Ultima Actualización :</a>  
+                            <div class="fechaUltima">
+                               <span>jueves, 09 de septiembre de 2021</span>
+                            </div>
+                        </div>
+
+                        <div id="footerRight">
+                            <strong>Atención telefónica a través del Centro de Contacto:</strong><br>
+                            En Bogotá: (57-1) 589 3750 Resto del pais: 018000960020<br>
+                            <strong>Horario de atención:</strong> lunes a viernes de 7:00 a.m. a 6:00 p.m. y <br>
+                            sábados de 8:00 a.m. a 1:00 p.m. en jornada continua.<br>
+
+                            <br />
+                             <span id="lblVersion" style="color:White;font-weight:bold;">Versión 2.4</span>
+                            <br />
+                            <div class="compartir">
+                            <div class="itemR"><img src="imgLayout/Print-MinSaludCol.png" class="mouse" id="imprime" alt="Imprimir la pagina actual" title="Imprimir la pagina actual"></div>
+                            <div class="itemR"><a id="facebookEnlace" title="Ingresar a Facebook MinSaludCol" href="javascript:void(0)"><img src="imgLayout/Facebook-MinSaludCol.png" alt="Ingresar a Facebook MinSaludCol" title="Ingresar a Facebook MinSaludCol"></a></div>
+                            <div class="itemR"><a id="twitterEnlace" title="Ingresar a Twitter MinSaludCol" href="javascript:void(0)"><img src="imgLayout/Twitter-MinSaludCol.png" alt="Ingresar a Twitter MinSaludCol" title="Ingresar a Twitter MinSaludCol"></a></div>
+                            <div class="itemR"><a title="Ingresar a YouTube MinSaludCol" href="https://www.youtube.com/user/MinSaludColPrensa" target="_blank"><img src="imgLayout/YouTube-MinSaludCol.png" alt="Ingresar a YouTube MinSaludCol" title="Ingresar a YouTube MinSaludCol"></a></div>
+                            <div class="itemR"><a title="Ingresar a Instagram MinSaludCol" href="https://instagram.com/minsaludcol/" target="_blank"><img src="imgLayout/Instagram-MinSaludCol.png" alt="Ingresar a Instagram MinSaludCol" title="Ingresar a Instagram MinSaludCol"></a></div>
+                            <div class="itemR"><a title="Ingresar a Google+ MinSaludColPrensa" href="https://plus.google.com/+MinSaludColPrensa" target="_blank"><img src="imgLayout/GoogleMinSaludCol.png" alt="Ingresar a Google+ MinSaludColPrensa" title="Ingresar a Google+ MinSaludColPrensa"></a></div>
+                            <div class="itemR"><a title="Ingresar a servicio RSS" href="/atencion/Paginas/rss-msps2.aspx" target="_blank"><img src="imgLayout/RSS-MinSaludCol.png" alt="Ingresar a servicio RSS" title="Ingresar a servicio RSS"></a></div>
+                            <div class="itemR"><a title="Certificación ISO 27001" href="/Paginas/MinSalud-lider-en-la-proteccion-de-datos-de-los-colombianos.aspx" target="_blank"><img src="imgLayout/iso27001-icon.png" alt="Certificación ISO 27001" title="Certificación ISO 27001"></a></div>
+                            <div class="clear"></div>
+
+
+
+</div>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+
+
+  <div id="dialog-confirm" title="Información - Consulta RUAF" style="display: none;" > 
+      <center>
+
+      <div >
+        Sesión expirada!
+    </div>
+      
+            <img src="Images/warning-icon.png" height="29" width="29"/>
+     
+    <div >
+        Su sesión expira en&nbsp;<span id="seconds"></span>&nbsp;segundos.<br />
+        Lo redirigirá a otro sitio web.!<br />
+        Quiere detenerla?
+    </div>
+   <br />
+             
+           </center>   
+      
+          <div class="row">
+
+              <div class="col-md-4">
+            <label class="control-label"></label>
+            <div class='form-group'>
+               </div>
+        </div>
+
+        <div class="col-md-4">
+            <label class="control-label"></label>
+            <div class='form-group'>
+                      <input type="submit" name="ctl00$btnYes" value="SI" onclick="ResetSession();" id="btnYes" class="form-control" />
+            </div>
+        </div>
+
+ 
+              
+           
+
+      </div>
+</div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+SessionExpireAlert(288000);//]]>
+</script>
+</form>
+</body>
+</html>
+

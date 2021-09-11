@@ -1,0 +1,26 @@
+{
+  "0": {
+    "id": "1",
+    "cc": "1018499218",
+    "expedicion": "01/12/2015",
+    "respuesta": "",
+    "status": "0",
+    "fecha_creacion": "2021-09-10"
+  },
+  "1": {
+    "id": "2",
+    "cc": "1074132769",
+    "expedicion": "29/10/2009",
+    "respuesta": "",
+    "status": "0",
+    "fecha_creacion": "2021-09-10"
+  },
+  "2": {
+    "id": "3",
+    "cc": "1074132768",
+    "expedicion": "29/10/2009",
+    "respuesta": "",
+    "status": "0",
+    "fecha_creacion": "2021-09-10"
+  }
+}
