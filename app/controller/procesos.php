@@ -33,6 +33,21 @@ class Procesos extends Controlador_principal
         $this->vista('procesos', $datos);
     }
 
+    function expedicion()
+    {
+        if (!empty($_POST)) {
+            $datos = [
+                'cedula' => $_POST['cedula']
+            ];
+            $resultado = $this->procesos->expedicion($datos);
+            $resultado = json_encode($resultado);
+            $datos = [
+                'response' => $resultado
+            ];
+            $this->vista('expedicion', $datos);
+        }
+    }
+
     function actualizar()
     {
         if (!empty($_POST)) {

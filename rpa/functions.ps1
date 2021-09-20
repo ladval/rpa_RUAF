@@ -11,7 +11,7 @@ function SaveData {
         [string]$content
     )
     If (Test-Path -Path $path ) {
-        Remove-Item -Path $path 
+        # Remove-Item -Path $path 
         Start-Sleep -s 1
     }
     Set-Content -Path $path -Value $content

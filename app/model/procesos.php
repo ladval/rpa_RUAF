@@ -13,6 +13,7 @@ if (strpos($_SERVER['REQUEST_URI'], '.php') !== false) {
 }
 
 class Procesos
+
 {
     protected $midb;
     function __construct()
@@ -25,13 +26,21 @@ class Procesos
     function listado()
     {
         $sql = $this->midb->query("
-        SELECT * FROM usuarios WHERE status = 0;;
+        SELECT * FROM usuarios WHERE status = 0;
 ");
         $resultado = stmt($sql);
         return ($resultado->count() > 0) ? $resultado : false;
     }
 
 
+    function expedicion($datos)
+    {
+        $sql = $this->midb->query("
+        SELECT * FROM base_ruaf.ani WHERE ANINuip =" . $datos['cedula'] . "
+");
+        $resultado = stmt($sql);
+        return ($resultado->count() > 0) ? $resultado : false;
+    }
 
     function actualizar($data)
     {
