@@ -2,7 +2,8 @@ function wsItemWidth {
     param (
         $item,
         $width,
-        $criteria
+        $criteria,
+        $cedula
     )
     $width = 'min-width: ' + $width + 'mm;">'
     if ($item.Contains($width)) {
@@ -21,6 +22,8 @@ function wsItemWidth {
             $extractedValue = $extractedValue.Replace('&#243;', "ó")
             $extractedValue = $extractedValue.Replace('&#250;', "ú")
             $extractedValue = $extractedValue.Replace('&#241;', "ñ")
+            $extractedValue = $extractedValue.Replace('Número de Identificación', "")
+            $extractedValue = $extractedValue.Replace("CC $($cedula)", "")
             return $extractedValue
         }
     }
@@ -28,7 +31,8 @@ function wsItemWidth {
 
 function ws_data {
     param (
-        $data
+        $data,
+        $cedula
     )
     $firstString = 'id="ctl00_MainContent_rvConsulta_ctl13_ReportControl_ctl04" value="100" /><div style="display:none;">'
     $secondString = '</div><div id="ctl00_MainContent_rvConsulta_ctl13_NonReportContent" style="height:100%;width:100%;">'
@@ -41,42 +45,56 @@ function ws_data {
     $arrayDataFiltro = $dataFiltro -Split "cannotShrinkTextBoxInTablix"
     foreach ($item in $arrayDataFiltro) {
         $arrayCoords = @(
-            #InfoBasica
+            
+            #InfoBasicaNormal
             "41.95|Primer",
             "41.55|Segundo",
             "44.86|Primer",
             "47.44|Segundo",
             "28.45|Sexo",
+
+            #InfoBasicaFallecido 
+            "37.52|Primer",
+            "35.45|Segundo",
+            "38.66|Primer",
+            "42.14|Segundo",
+            "24.28|Estado",
+            
             #Salud
             "45.17|Administradora",
             "44.27|R&#233;gimen",
-            "23.24|Fecha" ,
+            "23.24|Fecha",
             "26.09|Estado",
             "36.53|Tipo" ,
             "66.78|Departamento",
+
             #Pensiones
             "75.75|R&#233;gimen",
             "63.08|Administradora",
             "44.32|Fecha",
             "62.34|Estado",
+
             #Riesgos
             "70.57|Administradora",
             "26.22|Fecha",
             "24.44|Estado",
             "84.68|Actividad",
             "37.93|Labora",
+
             #CajaCompensacion
             "61.62|Administradora",
             "23.33|Fecha",
             "23.56|Estado",
             "53.56|Miembro",
             "39.12|Afiliado",
-            "40.87|Labora")
+            "40.87|Labora"
+            
+        )
         for ($i = 0; $i -lt $arrayCoords.Count; $i++) {   
             $coordsData = $arrayCoords[$i].Split('|')
             $coords = $coordsData[0]
-            $checkStr = $coordsData[1]
-            $itemFiltro = wsItemWidth $item $coords $checkStr
+            $checkStr = $coordsData[1].Split('/')
+            $itemFiltro = wsItemWidth $item $coords $checkStr $cedula
             if ($itemFiltro.Length -gt 0) {
                 $arrayResponse += $itemFiltro
             }

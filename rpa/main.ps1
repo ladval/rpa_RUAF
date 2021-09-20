@@ -29,7 +29,7 @@ function RUAF() {
                 $expedicionDate = "$($expedicionDate[2])/$($expedicionDate[1])/$($expedicionDate[0])"
                 $dataRuaf = FiltroRuaf $session $TC_OK_Params $($dbData.$i).$cedula $expedicionDate
                 if ($dataRuaf) {
-                    $data = ws_data $dataRuaf
+                    $data = ws_data $($dataRuaf) $($dbData.$i).$cedula
                     if ($data.Length -gt 0) {
                         $response = dataToCSV $data
                         $status = 1
@@ -71,5 +71,5 @@ function RUAF() {
 
 while ($true) {
     RUAF
-    Start-Sleep -s 300
+    Start-Sleep -s 150
 }

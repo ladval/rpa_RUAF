@@ -1,10 +1,10 @@
 
 #Cantidad de peticiones
-$Global:intentosRequest = 6
+$Global:intentosRequest = 3
 #Segundos entre intentos (Segundos)
-$Global:intervaloRequest = 10
+$Global:intervaloRequest = 2
 #TimeOut request (Segundos)
-$Global:timeoutRequest = 10
+$Global:timeoutRequest = 7
 
 ############################################################################################################################################################
 $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
